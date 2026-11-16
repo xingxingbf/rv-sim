@@ -1,6 +1,8 @@
 # 任务1：Linux 开发环境与 C 语言工程化
 
-## 构建
+这是任务1的代码。链表在 `list.c`，菜单在 `io.c`，`main.c` 只负责调用。
+
+## 编译
 
 ```bash
 make
@@ -14,13 +16,13 @@ make
 
 菜单：
 
-- `1` 头插，输入 `姓名 分数`
-- `2` 尾插，输入 `姓名 分数`
-- `3` 按名删除，输入姓名
-- `4` 按名查找，输入姓名
-- `5` 打印整表
-- `9` 释放整表
-- `0` 退出
+- 1 头插，输入姓名和分数
+- 2 尾插，输入姓名和分数
+- 3 按名删除
+- 4 按名查找
+- 5 打印整表
+- 9 释放整表
+- 0 退出
 
 ## 测试
 
@@ -34,13 +36,4 @@ bash tests/run_tests.sh
 make clean
 ```
 
-## 目录
-
-```text
-include/   list.h io.h
-src/       list.c io.c main.c
-GDB/       GDB 实验程序
-tests/     5 个边界用例
-debug-log.md
-study-log.md
-```
+一开始菜单是写在 `main.c` 里的，后来按任务书拆成了 `io.c` / `io.h`。如果 `make` 报错，先 `make clean` 再 `make`。
